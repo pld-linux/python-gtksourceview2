@@ -22,7 +22,7 @@ BuildRequires:	python-devel >= 1:2.3.2
 BuildRequires:	python-gnome-devel >= %{gnome_python_req}
 BuildRequires:	python-pycairo-devel
 BuildRequires:	python-pygtk-devel >= %{pygtk_req}
-BuildRequires:	sed
+BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,6 +33,31 @@ Gtksourceview2 bindings for Python.
 
 %description -l pl.UTF-8
 Wiązania Pythona do biblioteki gtksourceview2.
+
+%package devel
+Summary:	gtksourceview2 bindings for Python - development files
+Summary(pl.UTF-8):	Pliki programistyczne wiązań Pythona do biblioteki gtksourceview2
+Group:		Development/Languages/Python
+Requires:	%{name} = %{version}-%{release}
+Requires:	python-pygtk-devel >= %{pygtk_req}
+
+%description devel
+gtksourceview2 bindings for Python - development files.
+
+%description devel -l pl.UTF-8
+Pliki programistyczne wiązań Pythona do biblioteki gtksourceview2.
+
+%package apidocs
+Summary:	pygtksourceview2 API documentation
+Summary(pl.UTF-8):	Dokumentacja API pygtksourceview2
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+pygtksourceview2 API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API pygtksourceview2.
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -49,7 +74,6 @@ sed -i 's/codegen\.py/codegen.pyc/' configure.ac
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_datadir}/doc
 
 %{__make} install \
@@ -65,6 +89,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/gtksourceview2module.so
-%{_gtkdocdir}/pygtksourceview2
-%{_datadir}/pygtk/*/defs/gtksourceview2.defs
+
+%files devel
+%defattr(644,root,root,755)
+%{pydefsdir}/gtksourceview2.defs
 %{_pkgconfigdir}/*.pc
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/pygtksourceview2
