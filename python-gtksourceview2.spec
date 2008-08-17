@@ -4,22 +4,22 @@
 Summary:	GtkSourceView2 bindings for Python
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkSourceView2
 Name:		python-gtksourceview2
-Version:	2.2.0
+Version:	2.3.0
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.2/%{module}-%{version}.tar.bz2
-# Source0-md5:	5dd0a9aa99168f989ed04123a65077e4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.3/%{module}-%{version}.tar.bz2
+# Source0-md5:	937345e1326422a4d3ebdce3ac2b38d0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	gtksourceview2-devel >= 2.2.0
+BuildRequires:	gtksourceview2-devel >= 2.3.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.3.2
 # for style.css
-BuildRequires:	python-pygobject-apidocs >= 2.14.1
-BuildRequires:	python-pygobject-devel >= 2.14.1
+BuildRequires:	python-pygobject-apidocs >= 2.15.2
+BuildRequires:	python-pygobject-devel >= 2.15.2
 BuildRequires:	python-pygtk-devel >= %{pygtk_req}
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
@@ -38,7 +38,7 @@ Summary:	GtkSourceView2 bindings for Python - development files
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Pythona do biblioteki GtkSourceView2
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtksourceview2-devel >= 2.2.0
+Requires:	gtksourceview2-devel >= 2.3.0
 Requires:	python-pygtk-devel >= %{pygtk_req}
 
 %description devel
