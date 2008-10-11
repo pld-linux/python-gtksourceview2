@@ -4,15 +4,15 @@
 Summary:	GtkSourceView2 bindings for Python
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkSourceView2
 Name:		python-gtksourceview2
-Version:	2.3.0
+Version:	2.4.0
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.3/%{module}-%{version}.tar.bz2
-# Source0-md5:	937345e1326422a4d3ebdce3ac2b38d0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.4/%{module}-%{version}.tar.bz2
+# Source0-md5:	436e2ec467035a8cd174b794932e4cdc
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	gtksourceview2-devel >= 2.3.0
+BuildRequires:	gtksourceview2-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
