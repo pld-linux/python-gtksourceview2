@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.2/%{module}-%{
 # Source0-md5:	5dd0a9aa99168f989ed04123a65077e4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7
+BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview2-devel >= 2.2.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
@@ -21,6 +22,7 @@ BuildRequires:	python-devel >= 1:2.3.2
 BuildRequires:	python-pygobject-apidocs >= 2.14.1
 BuildRequires:	python-pygobject-devel >= 2.14.1
 BuildRequires:	python-pygtk-devel >= %{pygtk_req}
+BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
