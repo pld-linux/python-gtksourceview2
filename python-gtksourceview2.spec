@@ -1,28 +1,30 @@
 %define		module			pygtksourceview
-%define		pygtk_req		2:2.12.0
+%define		pygtk_req		2:2.14.0
 #
 Summary:	GtkSourceView2 bindings for Python
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkSourceView2
 Name:		python-gtksourceview2
-Version:	2.4.0
+Version:	2.9.1
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.4/%{module}-%{version}.tar.bz2
-# Source0-md5:	436e2ec467035a8cd174b794932e4cdc
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.9/%{module}-%{version}.tar.bz2
+# Source0-md5:	be7a7d3d1046f3af1d7509521a7a3c21
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	gtksourceview2-devel >= 2.4.0
+BuildRequires:	gtk-doc >= 1.4
+BuildRequires:	gtksourceview2-devel >= 2.9.1
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.3.2
 # for style.css
-BuildRequires:	python-pygobject-apidocs >= 2.15.2
-BuildRequires:	python-pygobject-devel >= 2.15.2
+BuildRequires:	python-pygobject-apidocs >= 2.16.0
+BuildRequires:	python-pygobject-devel >= 2.16.0
 BuildRequires:	python-pygtk-devel >= %{pygtk_req}
+BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
-%pyrequires_eq	python-modules
+Requires:	python-pygobject >= 2.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define pydefsdir %(pkg-config --variable=defsdir pygtk-2.0)
@@ -38,7 +40,7 @@ Summary:	GtkSourceView2 bindings for Python - development files
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Pythona do biblioteki GtkSourceView2
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtksourceview2-devel >= 2.3.0
+Requires:	gtksourceview2-devel >= 2.9.1
 Requires:	python-pygtk-devel >= %{pygtk_req}
 
 %description devel
@@ -70,6 +72,7 @@ sed -i 's/codegen\.py/codegen.pyc/' configure.ac
 %{__autoheader}
 %{__automake}
 %configure \
+	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
