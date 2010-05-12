@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.10/%{module}-%
 # Source0-md5:	2654354d61422fb79d8375fc3a3b5393
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	gtksourceview2-devel >= 2.10.0
 BuildRequires:	libtool
