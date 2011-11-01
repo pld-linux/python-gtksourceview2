@@ -26,6 +26,7 @@ BuildRequires:	python-pygtk-devel >= %{pygtk_req}
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 Requires:	python-pygobject >= 2.16.0
+Requires:	python-pygtk-gtk >= %{pygtk_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define pydefsdir %(pkg-config --variable=defsdir pygtk-2.0)
@@ -84,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	HTMLdir=%{_gtkdocdir}/pygtksourceview2
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.la
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
