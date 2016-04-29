@@ -1,11 +1,10 @@
 %define		module			pygtksourceview
 %define		pygtk_req		2:2.14.0
-#
 Summary:	GtkSourceView2 bindings for Python
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkSourceView2
 Name:		python-gtksourceview2
 Version:	2.10.1
-Release:	7
+Release:	8
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.10/%{module}-%{version}.tar.bz2
@@ -56,6 +55,9 @@ Summary:	pygtksourceview2 API documentation
 Summary(pl.UTF-8):	Dokumentacja API pygtksourceview2
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 pygtksourceview2 API documentation.
