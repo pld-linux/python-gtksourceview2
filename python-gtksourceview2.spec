@@ -55,9 +55,7 @@ Summary:	pygtksourceview2 API documentation
 Summary(pl.UTF-8):	Dokumentacja API pygtksourceview2
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 pygtksourceview2 API documentation.
